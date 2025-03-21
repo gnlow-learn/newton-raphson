@@ -18,7 +18,7 @@ const nr =
         console.log(diff)
         if (diff < tol) return x
 
-        x = x.map((x, i) => x - grad[i])
+        x = x.map((x, i) => x - fx / grad[i])
     }
     return x
 }
@@ -27,4 +27,4 @@ console.log(nr(
     x => x**2-2,
     [x => 2*x],
     [2],
-))
+)) // [ 1.414 ]
